@@ -20,4 +20,5 @@ for key in args:
     else:
         args_list.append(f"-{key}")
 
+args_list = [CORE_PATH] + args_list
 os.execl(CORE_PATH, *args_list)
