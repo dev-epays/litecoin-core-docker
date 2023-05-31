@@ -3,7 +3,9 @@ import os
 args = {'rpcuser': os.getenv("RPC_USER", "admin"),
         'rpcpassword': os.getenv("RPC_PASSWORD", "admin"),
         'rpcbind': os.getenv("RPC_BIND", "0.0.0.0").split(";"),
-        'rpcallowip': os.getenv("RPC_ALLOW_IP", "0.0.0.0").split(";")}
+        'rpcallowip': os.getenv("RPC_ALLOW_IP", "0.0.0.0/0.0.0.0").split(";"),
+        'printtoconsole': '',
+        'txindex': os.getenv("TX_INDEX", "1")}
 
 CORE_PATH = f"/usr/local/bin/{os.getenv('CORE_NAME')}d"
 
@@ -13,7 +15,9 @@ for key in args:
     if isinstance(value, list):
         for element in value:
             args_list.append(f"-{key}={element}")
-    else:
+    elif value:
         args_list.append(f"-{key}={value}")
-        
+    else:
+        args_list.append(f"-{key}")
+
 os.execl(CORE_PATH, *args_list)
