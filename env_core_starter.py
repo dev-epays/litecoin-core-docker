@@ -15,5 +15,5 @@ for key in args:
             args_list.append(f"-{key}={element}")
     else:
         args_list.append(f"-{key}={value}")
-print(args_list)
+        
 os.execl(CORE_PATH, *args_list)
