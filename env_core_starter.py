@@ -5,7 +5,8 @@ args = {'rpcuser': os.getenv("RPC_USER", "admin"),
         'rpcbind': os.getenv("RPC_BIND", "0.0.0.0").split(";"),
         'rpcallowip': os.getenv("RPC_ALLOW_IP", "0.0.0.0/0.0.0.0").split(";"),
         'printtoconsole': '',
-        'txindex': os.getenv("TX_INDEX", "1")}
+        'txindex': os.getenv("TX_INDEX", "1"),
+        'datadir': os.getenv("DATA_DIR", "/home/litecoin/")}
 
 CORE_PATH = f"/usr/local/bin/{os.getenv('CORE_NAME')}d"
 
