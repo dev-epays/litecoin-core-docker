@@ -9,5 +9,5 @@ services:
       RPC_USER: "litecoin"
       RPC_PASSWORD: "litecoin"
     volumes:
-      - /home/blockchain/.litecoin:/home/dogecoin/.litecoin
+      - /home/blockchain/litecoin:/home/litecoin
 ```
