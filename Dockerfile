@@ -11,6 +11,7 @@ RUN curl -SLO ${CORE_URL} \
   && rm *.tar.gz
 
 COPY env_core_starter.py /env_core_starter.py
+RUN chown ${CORE_NAME}:${CORE_NAME} -R /home/${CORE_NAME}
 USER ${CORE_NAME}
 
 EXPOSE 9332 9333 19332 19333 19444
